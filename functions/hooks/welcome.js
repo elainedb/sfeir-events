@@ -20,7 +20,7 @@ class Welcome extends SimpleIntent {
 
         let welcomeResponse = utils.randomFromArray(WELCOME_SENTENCES);
 
-        app.ask(welcomResponse);
+        app.ask(welcomeResponse);
     }
 }
 
