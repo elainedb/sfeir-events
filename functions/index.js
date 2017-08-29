@@ -7,6 +7,7 @@ const functions = require('firebase-functions');
 require('./hooks/shared/object.ext');
 
 const Welcome = require('./hooks/welcome');
+const ListByType = require('./hooks/listByType');
 
 exports.sfeirevents = functions.https.onRequest((request, response) => {
 
@@ -16,7 +17,8 @@ exports.sfeirevents = functions.https.onRequest((request, response) => {
 
     let actionMap = new Map();
     [
-        new Welcome(request.body)
+        new Welcome(request.body),
+        new ListByType(request.body)
     ].forEach(i => i.register(actionMap));
 
     app.handleRequest(actionMap);
