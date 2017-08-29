@@ -6,7 +6,7 @@
   "license": "Apache Version 2.0",
   "author": "SFEIR",
   "engines": {
-    "node": "~4.2"
+    "node": "~6.11"
   },
   "scripts": {
     "lint": "semistandard --fix \"**/*.js\"",

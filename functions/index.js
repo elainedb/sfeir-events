@@ -4,7 +4,7 @@ process.env.DEBUG = 'actions-on-google:*';
 const App = require('actions-on-google').ApiAiApp;
 const functions = require('firebase-functions');
 
-require('./hooks/shared/object.ext');
+require('./shared/object.ext');
 
 const Welcome = require('./hooks/welcome');
 const ListByType = require('./hooks/listByType');

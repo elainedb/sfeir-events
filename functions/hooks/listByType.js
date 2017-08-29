@@ -1,7 +1,7 @@
 'use strict';
 
-const SimpleIntent = require('./shared/simpleIntent');
-const utils = require('./shared/_utils');
+const SimpleIntent = require('../shared/simpleIntent');
+const utils = require('../shared/_utils');
 
 const INTENT_ID = 'intent.events.listbytype';
 
@@ -16,6 +16,7 @@ class ListByType extends SimpleIntent {
         super(INTENT_ID, req);
     }
 
+    /** @inheritDoc */
     trigger(app) {
 
         let welcomeResponse = utils.randomFromArray(WELCOME_SENTENCES);

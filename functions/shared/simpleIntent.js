@@ -1,10 +1,21 @@
 'use strict';
 
-class SimpleIntent {
+const AbstractIntent = require('./abstractIntent')
 
+class SimpleIntent extends AbstractIntent {
+
+    /**
+     * @param intentId {string}
+     * @param req {Response}
+     */
     constructor(intentId, req) {
+        super();
         this.intentId = intentId;
+
+        /** @type {string} */
         this.lang = req.lang ? req.lang : "en";
+
+        /** @type {Response} */
         this.req = req;
     }
 
