@@ -1,7 +1,7 @@
 'use strict';
 
-process.env.DEBUG = 'actions-on-google:*';
-const App = require('actions-on-google').ApiAiApp;
+process.env.DEBUG = 'actions-on-google:error';
+const App = require('actions-on-google').DialogflowApp;
 const functions = require('firebase-functions');
 
 require('./hooks/shared/object.ext');

@@ -14,10 +14,12 @@ class Welcome extends SimpleIntent {
 
     constructor(req) {
         super(INTENT_ID, req);
+        this.log('create Welcome Intent');
     }
 
     trigger(app) {
 
+        this.log('Welcome triggered');
         let welcomeResponse = utils.randomFromArray(WELCOME_SENTENCES);
 
         app.ask(welcomeResponse);

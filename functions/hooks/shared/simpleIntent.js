@@ -28,7 +28,12 @@ class SimpleIntent {
     }
 
     register(actionMap) {
+        this.log('register Intent');
         actionMap.set(this.intentId, this.safeTrigger.bind(this));
+    }
+
+    log(... messages) {
+        console.log(`### ${this.constructor.name} :`, ... messages);
     }
 }
 
