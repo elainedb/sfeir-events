@@ -9,6 +9,7 @@
     "node": "~4.2"
   },
   "scripts": {
+    "test": "jasmine",
     "lint": "semistandard --fix \"**/*.js\"",
     "start-local-jade": "firebase serve -p 5004 --only functions,hosting",
     "ngrok-local-jade": "/Application/ngrok http 5006",
@@ -23,6 +24,7 @@
     "googleapis": "^21.3.0"
   },
   "devDependencies": {
+    "jasmine": "^3.1.0",
     "semistandard": "^9.1.0"
   }
 }

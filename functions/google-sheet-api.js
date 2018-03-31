@@ -8,18 +8,21 @@ var googleAuth = require('google-auth-library');
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
   process.env.USERPROFILE) + '/.credentials/';
-var TOKEN_PATH = TOKEN_DIR + 'sheets.googleapis.com-nodejs-quickstart.json';
+console.log(TOKEN_PATH);
+var TOKEN_PATH = TOKEN_DIR + 'sfeir.json';
 //'https://docs.google.com/spreadsheets/d/1X6NJfAQEIcEo5Z4J_uxv3nq2scgb8Cti_evVjIxJQqk/edit#gid=0';
 
 // Load client secrets from a local file.
 module.exports = (whatToDoWithSheet) => {
+  console.log('@ googleSheetApi : would open spreadSheet');
   fs.readFile('client_secret.json', function processClientSecrets(err, content) {
     if (err) {
-      console.log('Error loading client secret file: ' + err);
+      console.log('@ googleSheetApi : Error loading client secret file: ' + err);
       return;
     }
     // Authorize a client with the loaded credentials, then call the
     // Google Sheets API.
+    console.log('@ googleSheetApi : spreadSheet will open');
     authorize(JSON.parse(content), whatToDoWithSheet);
   });
 }
@@ -41,6 +44,7 @@ function authorize(credentials, callback) {
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, function (err, token) {
     if (err) {
+      console.log('c\est quoi cette putain derreur ?', err);
       getNewToken(oauth2Client, callback);
     } else {
       oauth2Client.credentials = JSON.parse(token);

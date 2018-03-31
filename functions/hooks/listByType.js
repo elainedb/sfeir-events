@@ -13,6 +13,7 @@ const WELCOME_SENTENCES = [
 ];
 
 function listValues(auth) {
+    console.log('# listByType : Hey, my endpoint function is called');
     var sheets = google.sheets('v4');
     sheets.spreadsheets.values.get({
         auth: auth,
@@ -45,7 +46,8 @@ class ListByType extends SimpleIntent {
 
     trigger(app) {
         this.log('# listByType : ListByType triggered');
-        console.log(callSheet(listValues));
+        callSheet(listValues);
+        this.log('# listByType : end');
         app.ask('heyyy it\'s done :D');
     }
 }
